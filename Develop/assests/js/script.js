@@ -6,7 +6,6 @@ var passwordLength = "";
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var passNumber = Math.floor(Math.random() * 10);
 
-// console.log(passNumber);
 var specials = [
   "!",
   "'",
@@ -80,12 +79,26 @@ var lowercase = [
   "y",
   "z",
 ];
-console.log();
-console.log();
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+var passLength = finalArray.length;
 
 var confirmLength = function () {
-  var passLength = prompt(
-    "A good password is between 8 - 128 characters. How many characters would you like to use in your password?"
+  var passLength = alert(
+    "A good password is between 8 - 128 characters. Would you like to generate a password?"
   );
   if (passLength < 8 || passLength > 128) {
     alert(
@@ -102,13 +115,14 @@ var confirmLength = function () {
       "Are you certain you do not want to use the passwrd generator?"
     );
   }
+  chooseUppercase();
 };
 function chooseUppercase() {
   array = [];
   str = "";
   var chooseUppercase = confirm("Would you like to use Uppercase characters?");
   if (chooseUppercase == true) {
-    confirmLength = prompt("How many uppercase letters would you like");
+    confirmLength = prompt("How many Uppercase characters would you like?");
     console.log(confirmLength);
     for (var i = 0; i < confirmLength; i++) {
       finalArray.push(uppercase[Math.floor(Math.random() * 26)]);
@@ -120,9 +134,9 @@ function chooseUppercase() {
 function chooseLowercase() {
   array = [];
   str = "";
-  var chooseLowercase = confirm("Would you like to use lowercase characters?");
+  var chooseLowercase = confirm("Would you like to use Lowercase characters?");
   if (chooseLowercase == true) {
-    confirmLength = prompt("How many lower case letters would you like");
+    confirmLength = prompt("How many Lowercase characters would you like?");
     console.log(confirmLength);
     for (var i = 0; i < confirmLength; i++) {
       finalArray.push(lowercase[Math.floor(Math.random() * 26)]);
@@ -137,9 +151,9 @@ function chooseLowercase() {
 function chooseNumbers() {
   array = [];
   str = "";
-  var chooseNumbers = confirm("Would you like to use numbers?");
+  var chooseNumbers = confirm("Would you like to use Numeric characters?");
   if (chooseNumbers == true) {
-    confirmLength = prompt("How many uppercase letters would you like");
+    confirmLength = prompt("How many Numeric characters would you like?");
     console.log(confirmLength);
     for (var i = 0; i < confirmLength; i++) {
       finalArray.push(numbers[Math.floor(Math.random() * 10)]);
@@ -151,9 +165,9 @@ function chooseNumbers() {
 function chooseSpecial() {
   array = [];
   str = "";
-  var chooseSpecial = confirm("Would you like to use special characters?");
+  var chooseSpecial = confirm("Would you like to use Special characters?");
   if (chooseSpecial == true) {
-    passLength = prompt("How many special letters would you like");
+    passLength = prompt("How many Special characters would you like?");
     console.log(passLength);
     for (var i = 0; i < passLength; i++) {
       finalArray.push(specials[Math.floor(Math.random() * 14)]);
@@ -169,7 +183,7 @@ console.log(finalArray);
 
 //   return value;
 confirmLength();
-
+var writePassword = shuffle(finalArray);
 function shuffle(finalArray) {
   var passwordIndex = finalArray.length,
     passwordValue,
@@ -185,12 +199,13 @@ function shuffle(finalArray) {
   }
   return finalArray;
 }
-shuffle(finalArray);
-console.log(finalArray);
 
+console.log(finalArray);
+console.log(writePassword);
+console.log(passLength);
 // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
 
 // document.getElementById("generate").addEventListener("click", function () {
-//   document.getElementById("password").innerHTML = finalArray;
+//   document.getElementById("password").innerHTML = writePassword;
 // });
