@@ -81,34 +81,37 @@ var lowercase = [
   "z",
 ];
 
-var confirmLength = function () {
-  var passLength = alert(
-    'A good password is between 8 - 128 characters. Would you like to "Generate a Password"?'
-  );
-  if (passLength < 8 || passLength > 128) {
-    alert(
-      "Please enter a valid number for your password length between 8 and 128 characters."
-    );
-    return confirmLength();
-  }
-  if (passLength >= 8 && passLength <= 128) {
-    chooseUppercase();
-    console.log(passLength);
-  }
-  if (passLength == false) {
-    var confirmSkip = confirm(
-      "Are you certain you do not want to use the passwrd generator?"
-    );
-  }
-  chooseUppercase();
-};
+// var passwordLength = function () {
+//   var passLength = alert(
+//     'A good password is between 8 - 128 characters. Would you like to "Generate a Password"?'
+//   );
+//   if (passLength < 8 || passLength > 128) {
+//     alert(
+//       "Please enter a valid number for your password length between 8 and 128 characters."
+//     );
+//     return confirmLength();
+//   }
+//   if (passLength >= 8 && passLength <= 128) {
+//     chooseUppercase();
+//     console.log(passLength);
+//   }
+//   if (passLength == false) {
+//     var confirmSkip = confirm(
+//       "Are you certain you do not want to use the passwrd generator?"
+//     );
+//   }
+chooseUppercase();
+// };
 function chooseUppercase() {
   array = [];
   str = "";
+  var passLength = alert(
+    'A good password is between 8 - 128 characters. Would you like to "Generate a Password"?'
+  );
   var chooseUppercase = confirm("Would you like to use Uppercase characters?");
   if (chooseUppercase == true) {
     confirmLength = prompt(
-      "How many Uppercase characters would you like to use?"
+      "How many Uppercase characters would you like to use? (Use the cancel button to move on to next choice)"
     );
     console.log(confirmLength);
     for (var i = 0; i < confirmLength; i++) {
@@ -123,7 +126,9 @@ function chooseLowercase() {
   str = "";
   var chooseLowercase = confirm("Would you like to use Lowercase characters?");
   if (chooseLowercase == true) {
-    confirmLength = prompt("How many Lowercase characters would you like?");
+    confirmLength = prompt(
+      "How many Lowercase characters would you like? (Use the cancel button to move on to next choice)"
+    );
     console.log(confirmLength);
     for (var i = 0; i < confirmLength; i++) {
       finalArray.push(lowercase[Math.floor(Math.random() * 26)]);
@@ -141,7 +146,7 @@ function chooseNumbers() {
   var chooseNumbers = confirm("Would you like to use Numeric characters?");
   if (chooseNumbers == true) {
     confirmLength = prompt(
-      "How many Numeric characters would you like to use?"
+      "How many Numeric characters would you like to use? (Use the cancel button to move on to next choice)"
     );
     console.log(confirmLength);
     for (var i = 0; i < confirmLength; i++) {
@@ -156,7 +161,9 @@ function chooseSpecial() {
   str = "";
   var chooseSpecial = confirm("Would you like to use Special characters?");
   if (chooseSpecial == true) {
-    passLength = prompt("How many Special characters would you like to use?");
+    passLength = prompt(
+      "How many Special characters would you like to use? (Use the cancel button to move on to next choice)"
+    );
     console.log(passLength);
     for (var i = 0; i < passLength; i++) {
       finalArray.push(specials[Math.floor(Math.random() * 14)]);
@@ -217,4 +224,4 @@ document.getElementById("generate").addEventListener("click", function () {
 
   //   return password;
 });
-confirmLength();
+// confirmLength();
