@@ -146,8 +146,6 @@ function chooseLowercase() {
   }
   chooseNumbers();
 }
-// console.log(finalArray);
-// chooseLowercase();
 
 function chooseNumbers() {
   array = [];
@@ -177,12 +175,7 @@ function chooseSpecial() {
   }
   return finalArray;
 }
-console.log(finalArray);
-// function to generate a random numeric value
-// var randomNumber = function (min, max) {
-//   var value = Math.floor(Math.random() * (max - min + 1) + min);
 
-//   return value;
 confirmLength();
 var writePassword = shuffle(finalArray);
 function shuffle(finalArray) {
@@ -200,13 +193,3 @@ function shuffle(finalArray) {
   }
   return finalArray;
 }
-
-console.log(finalArray);
-console.log(writePassword);
-console.log(passLength);
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-// document.getElementById("generate").addEventListener("click", function () {
-//   document.getElementById("password").innerHTML = writePassword;
-// });
