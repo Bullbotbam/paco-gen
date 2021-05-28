@@ -6,7 +6,7 @@ The Password Generator alllows you to compose a password from answering four sim
 
 ## Samples and Screenshots
 
-![screenshot of password generator](paco-gen/Develop/assests/images/passwordGenerator.png)
+![screenshot of password generator](https://github.com/Bullbotbam/paco-gen/blob/main/Develop/assests/images/passwordGenerator.png)
 
 ## Contributors
 
